@@ -1,0 +1,6 @@
+{
+  "name": "CAPITAL-AI Analytics Hub",
+  "description": "Die Analytics-Plattform von CAPITAL-AI für fundierte Marktanalysen, robuste Datenqualität, transparente Risikobewertung und evidenzbasierte Investment-Entscheidungen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
