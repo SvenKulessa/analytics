@@ -3,6 +3,7 @@ import {
   Building2,
   Check,
   ChevronRight,
+  FileText,
   GraduationCap,
   Shield,
   User,
@@ -366,6 +367,70 @@ export const HubModals: React.FC<HubModalsProps> = ({
                   <Shield className="h-4 w-4" />
                   <span>≥ 90 %</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* License & Data Attribution Modal */}
+        {activeModal === 'license' && (
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-600/70 bg-slate-800/70 text-sky-300">
+                <FileText className="h-5 w-5" />
+              </div>
+              <div>
+                <h2 className="font-display text-[20px] font-bold text-white">
+                  {lang === 'DE'
+                    ? 'Lizenzierung von Grafiken & Daten'
+                    : 'Graphics & Data Licensing'}
+                </h2>
+                <p className="text-[13px] text-slate-400">
+                  {lang === 'DE'
+                    ? 'Dokumentiert in /LICENSE_ASSETS_AND_DATA.md'
+                    : 'Documented in /LICENSE_ASSETS_AND_DATA.md'}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-5 space-y-3 text-[13px] leading-relaxed text-slate-300">
+              <div className="hub-subcard rounded-xl border border-slate-700/60 p-4">
+                <div className="font-semibold text-white">
+                  {lang === 'DE'
+                    ? 'Erstellte Vektorgrafiken & Brand-Assets (Apache-2.0)'
+                    : 'Created Vector Graphics & Brand Assets (Apache-2.0)'}
+                </div>
+                <p className="mt-1 text-slate-400">
+                  {lang === 'DE'
+                    ? 'Das CAPITAL-AI Brand-Emblem (Header & Hero), der 7-Segment-Orbitalring sowie die SVG-Donut- und Sparkline-Visualisierungen stehen unter Apache-2.0 für capital-ai.online zur freien Nutzung und Skalierung.'
+                    : 'The CAPITAL-AI brand emblem (header & hero), 7-segment orbital ring, and SVG donut/sparkline charts are licensed under Apache-2.0 for capital-ai.online.'}
+                </p>
+              </div>
+
+              <div className="hub-subcard rounded-xl border border-slate-700/60 p-4">
+                <div className="font-semibold text-white">
+                  {lang === 'DE'
+                    ? 'Strukturierte Analytics- & Screener-Daten (CC BY 4.0)'
+                    : 'Structured Analytics & Screener Data (CC BY 4.0)'}
+                </div>
+                <p className="mt-1 text-slate-400">
+                  {lang === 'DE'
+                    ? 'Alle hinterlegten Prozessmetriken, Instrumenten-Profile und Lernmodule in src/data/analyticsData.ts sind unter CC BY 4.0 (Attribution: CAPITAL-AI) als Demonstrationsdaten lizenziert.'
+                    : 'All process metrics, instrument profiles, and learning modules in src/data/analyticsData.ts are licensed under CC BY 4.0 (Attribution: CAPITAL-AI) as demonstration datasets.'}
+                </p>
+              </div>
+
+              <div className="hub-subcard rounded-xl border border-slate-700/60 p-4">
+                <div className="font-semibold text-white">
+                  {lang === 'DE'
+                    ? 'Prozess-Icons (Lucide Icons · ISC-Lizenz)'
+                    : 'Process Icons (Lucide Icons · ISC License)'}
+                </div>
+                <p className="mt-1 text-slate-400">
+                  {lang === 'DE'
+                    ? 'Sämtliche Prozess- und UI-Icons stammen aus lucide-react (ISC-Lizenz, Copyright © Lucide Contributors).'
+                    : 'All process and UI icons are provided by lucide-react (ISC License, Copyright © Lucide Contributors).'}
+                </p>
               </div>
             </div>
           </div>

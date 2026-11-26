@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ChevronRight, Globe, Menu, X } from 'lucide-react';
 import { Language, ModuleId, UI_COPY } from '../data/analyticsData';
+import { CapitalAiEmblem } from './CapitalAiEmblem';
 
-export type ActiveModalType = 'learning' | 'pricing' | 'enterprise' | 'profile' | null;
+export type ActiveModalType = 'learning' | 'pricing' | 'enterprise' | 'profile' | 'license' | null;
 
 interface NavbarProps {
   lang: Language;
@@ -78,56 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             href="#top"
             className="flex items-center gap-2.5 whitespace-nowrap shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 rounded-md"
           >
-            {/* Custom orbital growth emblem matching mockup */}
-            <svg
-              viewBox="0 0 40 32"
-              className="h-7 w-9 shrink-0"
-              fill="none"
-              aria-hidden="true"
-            >
-              <defs>
-                <linearGradient id="brandArc1" x1="0" y1="28" x2="38" y2="4" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#38bdf8" />
-                  <stop offset="55%" stopColor="#60a5fa" />
-                  <stop offset="100%" stopColor="#f59e0b" />
-                </linearGradient>
-                <linearGradient id="brandArc2" x1="4" y1="6" x2="36" y2="26" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#22d3ee" />
-                  <stop offset="100%" stopColor="#a855f7" />
-                </linearGradient>
-              </defs>
-              <ellipse
-                cx="20"
-                cy="16"
-                rx="15"
-                ry="8.5"
-                transform="rotate(-18 20 16)"
-                stroke="url(#brandArc1)"
-                strokeWidth="1.6"
-                opacity="0.9"
-              />
-              <ellipse
-                cx="20"
-                cy="16"
-                rx="13"
-                ry="6.5"
-                transform="rotate(22 20 16)"
-                stroke="url(#brandArc2)"
-                strokeWidth="1.2"
-                opacity="0.75"
-              />
-              <circle cx="20" cy="16" r="6.5" stroke="#38bdf8" strokeWidth="1" opacity="0.5" />
-              <rect x="14.5" y="16" width="2.2" height="5.5" rx="0.6" fill="#38bdf8" />
-              <rect x="18.2" y="13" width="2.2" height="8.5" rx="0.6" fill="#60a5fa" />
-              <rect x="21.9" y="10" width="2.2" height="11.5" rx="0.6" fill="#f59e0b" />
-              <path
-                d="M13 18.5L18.5 13.5L22 15.2L27.5 8.5"
-                stroke="#fbbf24"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <CapitalAiEmblem className="h-8 w-10 shrink-0" />
             <span className="font-display text-[15px] font-bold tracking-[0.22em] text-slate-100">
               CAPITAL-AI
             </span>

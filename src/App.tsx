@@ -15,6 +15,7 @@ import { Language, ModuleId } from './data/analyticsData';
 export default function App() {
   const [lang, setLang] = useState<Language>('DE');
   const [activeModule, setActiveModule] = useState<ModuleId>('datenqualitaet');
+  const [hoveredModule, setHoveredModule] = useState<ModuleId | null>(null);
   const [activeModal, setActiveModal] = useState<ActiveModalType>(null);
 
   const handleToggleLang = () => {
@@ -56,6 +57,8 @@ export default function App() {
         <OrbitalGlobeHero
           lang={lang}
           activeModule={activeModule}
+          hoveredModule={hoveredModule}
+          onHoverModule={setHoveredModule}
           onSelectModule={handleSelectModule}
           onOpenLearning={() => setActiveModal('learning')}
           onOpenAnalytics={handleScrollToExplorer}
@@ -64,6 +67,8 @@ export default function App() {
         <ProcessSelector
           lang={lang}
           activeModule={activeModule}
+          hoveredModule={hoveredModule}
+          onHoverModule={setHoveredModule}
           onSelectModule={handleSelectModule}
         />
 
@@ -103,6 +108,13 @@ export default function App() {
               className="hover:text-slate-200 transition-colors cursor-pointer"
             >
               {lang === 'DE' ? 'Für Unternehmen' : 'Enterprise'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveModal('license')}
+              className="hover:text-slate-200 transition-colors cursor-pointer"
+            >
+              {lang === 'DE' ? 'Lizenz & Daten' : 'License & Data'}
             </button>
           </div>
         </div>
